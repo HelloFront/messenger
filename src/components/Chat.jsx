@@ -15,7 +15,6 @@ const Chat = () => {
   )   
 
   const sendMessage = async() => {
-    console.log(user);
     firestore.collection('messages').add({
       uid: user.uid,
       displayName: user.displayName,
@@ -37,7 +36,7 @@ const Chat = () => {
             alignItems={"center"}
           >
           <div style={{width: '80%', padding: '20px', height: '70vh', border: '1px solid blue', overflowY: 'auto'}}>
-            {messages.map(item => 
+            {messages?.map(item => 
               <div className='message'
                 style={{
                   borderRadius: '3px',
